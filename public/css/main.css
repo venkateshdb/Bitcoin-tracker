@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins&display=swap');
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.header-top {
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: rgb(255, 255, 255);
+    justify-items: center;
+    font-family: Poppins;
+    color: rgb(10, 9, 9);
+    z-index: 100;
+    box-shadow: 0px 2px 6px -5px #6d6363;
+}
+
+.navbar {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: auto 300px;
+    height: 60px;
+}
+
+.link {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 14px;
+    justify-items: center;
+    font-family: 'Poppins';
+}
+
+.link a {
+    padding: 0px 10px;
+    transition: .2s ease-in all;
+}
+
+.link a:hover {
+    background: aliceblue;
+}
+
+.brand,
+.brand-name {
+    width: 100%;
+    margin: 0;
+    height: 100%;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    left: 40px;
+}
+
+a {
+    text-decoration: none !important;
+    color: black;
+}
+
+.container {
+    display: grid;
+    height: 100vh;
+    justify-content: center;
+    align-content: center;
+}
+
+.google-btn {
+    width: 184px;
+    height: 42px;
+    background-color: #4285f4;
+    border-radius: 2px;
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+  }
+  .google-btn .google-icon-wrapper {
+    position: absolute;
+    margin-top: 1px;
+    margin-left: 1px;
+    width: 40px;
+    height: 40px;
+    border-radius: 2px;
+    background-color: #fff;
+  }
+  .google-btn .google-icon {
+    position: absolute;
+    margin-top: 11px;
+    margin-left: 11px;
+    width: 18px;
+    height: 18px;
+  }
+  .google-btn .btn-text {
+    float: right;
+    margin: 11px 11px 0 0;
+    color: #fff;
+    font-size: 12px;
+    letter-spacing: 0.2px;
+    font-family: Poppins;
+  }
+  .google-btn:hover {
+    box-shadow: 0 0 6px #4285f4;
+  }
+  .google-btn:active {
+    background: #1669F2;
+  }
+
+  .container-chart {
+    margin-top: 7em;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-items: center;
+}
