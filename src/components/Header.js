@@ -1,4 +1,3 @@
-import { useEffect, createContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { logout } from '../firebase/firebase';
 
@@ -9,6 +8,7 @@ function Header(props){
     const signout = () => {
         logout();
         props.setLoggedIn(false);
+        sessionStorage.setItem("isLoggedIn", false)
         navigate('/')
     }
 
