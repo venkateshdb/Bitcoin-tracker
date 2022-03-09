@@ -1,4 +1,6 @@
-import { initializeApp } from "firebase/app";
+import {
+  initializeApp
+} from "firebase/app";
 import {
   GoogleAuthProvider,
   signInWithPopup,
@@ -17,14 +19,14 @@ import {
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAu0qibU3v3h0W1DtfXinFRlAUzliq_Q8g",
-  authDomain: "bitcoin-e6458.firebaseapp.com",
-  databaseURL: "https://bitcoin-e6458-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "bitcoin-e6458",
-  storageBucket: "bitcoin-e6458.appspot.com",
-  messagingSenderId: "4047814747",
-  appId: "1:4047814747:web:1e6aae6609d96a7012ff7e",
-  measurementId: "G-HBFGJQLVJJ"
+  apiKey: process.env.REACT_APP_APIKEY,
+  authDomain: process.env.REACT_APP_AUTHDOMAIN,
+  databaseURL: process.env.REACT_APP_DATABASEURL,
+  projectId: process.env.REACT_APP_PROJECTID,
+  storageBucket: process.env.REACT_APP_STORAGEBUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGINGSENDERID,
+  appId: process.env.REACT_APP_APPID,
+  measurementId: process.env.REACT_APP_MEASUREMENTID,
 };
 
 // Initialize Firebase
@@ -41,12 +43,11 @@ export const signInWithGoogle = async () => {
   try {
     const res = await signInWithPopup(auth, provider);
 
-    if(res.user)
+    if (res.user)
       return true;
     else
       return false;
-  }
-  catch(err){
+  } catch (err) {
     console.log(err);
     return false;
   }
@@ -57,6 +58,6 @@ export const logout = () => {
 }
 
 export const getData = (collectionRef, snapshot, error) => {
-  const ref = query(collection(db, collectionRef), orderBy("timestamp", "desc"),limit(20));
+  const ref = query(collection(db, collectionRef), orderBy("timestamp", "desc"), limit(20));
   return onSnapshot(ref, snapshot, error)
 }
